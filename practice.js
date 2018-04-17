@@ -249,10 +249,11 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   
 //Code Here
 function addTen(numbers){
+  var newArr = [];
   for(var i = 0; i < numbers.length; i++){
-    numbers[i] = Number(numbers[i]) + 10;
+    newArr.push(Number(numbers[i]) + 10);
   }
-  return numbers;
+  return newArr;
 }
 
 
@@ -278,7 +279,14 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2){
+  if(arr1.length > arr2.length){
+    return arr1;
+  }
+  else{
+    return arr2;
+  }
+}
 
 
 /*
@@ -290,7 +298,15 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function both(arr1, arr2){
+  var newArr = [];
+  for(let i = 0; i < arr1.length; i++){
+    if (arr2.indexOf(arr1[i])>=0){
+      newArr.push(arr1[i]);
+    }
+  }
+  return newArr;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -330,7 +346,11 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees.push(tyler);
+devMountainEmployees.push(cahlan);
+devMountainEmployees.push(ryan);
+devMountainEmployees.push(colt);
+console.log(devMountainEmployees.length);
 
 
 /*
@@ -339,7 +359,16 @@ var colt = {
 */
 
 //Code Here
-
+var cahlansSpot = 0;
+for(var i = 0; i < devMountainEmployees.length; i++)
+{
+  if(devMountainEmployees[i] === cahlan)
+  {
+    cahlansSpot = i;
+    break;
+  }
+}
+devMountainEmployees.splice(cahlansSpot, 1);
 
 
 ////////// PROBLEM 13 //////////
@@ -351,7 +380,7 @@ var colt = {
 */
 
 //Code Here
-
+var users = [];
 
 
 /*
@@ -370,8 +399,21 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-
-
+var user2 = {
+  name: 'Ron Weasley',
+  email: 'weasles@hogwarts.com',
+  password: 'quidditchforlife',
+  username: 'ronners'
+};
+var user3 = {
+  name: 'Harry Potter',
+  email: 'albusseveruspotteristhenexthalfbloodprince@gryffindor.com',
+  password: 'nomorehorcruxs',
+  username: 'thechosenone'
+};
+users.push(user1);
+users.push(user2);
+users.push(user3);
 
 /*
   Now you have a very common data structure. 
@@ -384,6 +426,9 @@ var user1 = {
 */
 
 //Code Here
+for(let i = 0; i < users.length; i++){
+  if(users[i].email === 'tylermcginnis33@gmail.com') users.splice(i, 1);
+}
 
 
 
